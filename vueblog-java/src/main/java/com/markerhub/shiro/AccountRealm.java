@@ -11,6 +11,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * AccountRealm是shiro进行登录或者权限校验的逻辑所在
+ */
 @Component
 public class AccountRealm extends AuthorizingRealm {
 
@@ -20,16 +23,32 @@ public class AccountRealm extends AuthorizingRealm {
     @Autowired
     UserService userService;
 
+    /**
+     * 为了让realm支持jwt的凭证校验,默认是UsernamePasswordToken
+     * @param token
+     * @return
+     */
     @Override
     public boolean supports(AuthenticationToken token) {
         return token instanceof JwtToken;
     }
 
+    /**
+     * 权限校验
+     * @param principals
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         return null;
     }
 
+    /**
+     * 登录认证校验
+     * @param token
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 

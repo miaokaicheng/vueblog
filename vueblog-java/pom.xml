@@ -95,6 +95,12 @@
             <version>0.9.1</version>
         </dependency>
 
+        <!-- Spring Boot配置注解执行器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>

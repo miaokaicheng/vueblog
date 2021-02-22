@@ -31,6 +31,11 @@ public class UserController {
         return Result.succ(user);
     }
 
+    @GetMapping("/{id}")
+    public Object test(@PathVariable("id") Long id) {
+        return userService.getById(id);
+    }
+
     @PostMapping("/save")
     public Result save(@Validated @RequestBody User user) {
         return Result.succ(user);
