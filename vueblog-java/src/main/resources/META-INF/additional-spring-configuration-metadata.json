@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "shiro-redis.enabled",
+      "type": "java.lang.String",
+      "description": "Description for shiro-redis.enabled."
+  }
+] }

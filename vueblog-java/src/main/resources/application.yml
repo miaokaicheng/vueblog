@@ -1,3 +1,6 @@
+spring:
+  profiles:
+    active: pro
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 server:
